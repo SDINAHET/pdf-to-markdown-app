@@ -1,0 +1,16 @@
+services:
+  pdf-to-md-api:
+    build: ./backend
+    container_name: pdf-to-md-api
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  pdf-to-md-front:
+    image: nginx:alpine
+    container_name: pdf-to-md-front
+    ports:
+      - "8080:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html:ro
+    restart: unless-stopped

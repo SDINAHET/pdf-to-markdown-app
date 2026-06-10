@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>PDF to Markdown</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main>
+    <h1>PDF → Markdown</h1>
+
+    <div id="drop-zone">
+      Dépose ton PDF ici
+      <input type="file" id="pdf-file" accept="application/pdf">
+    </div>
+
+    <button id="convert-btn">Convertir</button>
+    <button id="download-btn">Télécharger .md</button>
+
+    <h2>Résultat Markdown</h2>
+    <textarea id="markdown-output"></textarea>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
