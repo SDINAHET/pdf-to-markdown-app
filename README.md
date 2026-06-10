@@ -348,3 +348,25 @@ Feel free to use, modify and distribute it.
 
 Frontend : http://localhost:8080
 Backend  : http://localhost:8000/docs
+
+
+Tests automatisés exécutables localement ou dans Docker avec objectif de couverture minimale de 80 %.
+Pour lancer uniquement les tests :
+docker compose --profile test run --rm pdf-to-md-tests
+docker compose --profile test run --rm pdf-to-md-tests pytest --cov=app --cov-report=term-missing --cov-fail-under=80
+
+Pour lancer l’app normalement :
+docker compose up --build
+
+
+GET  /                 → test accueil
+GET  /api/health       → test santé API
+POST /api/convert      → conversion PDF
+PDF invalide           → 400 propre
+PDF vide               → 400 propre
+fichier non PDF        → 400 propre
+PDF sans texte         → 422 propre
+
+docker compose build --no-cache pdf-to-md-tests
+docker compose --profile test run --rm pdf-to-md-tests
+docker compose --profile test run --rm --build pdf-to-md-tests
