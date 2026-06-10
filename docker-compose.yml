@@ -18,7 +18,8 @@ services:
   pdf-to-md-tests:
     build: ./backend
     container_name: pdf-to-md-tests
-    command: pytest --cov=app --cov-report=term-missing --cov-fail-under=80
+    # command: pytest --cov=app --cov-report=term-missing --cov-fail-under=80
+    command: pytest --cov=app --cov-report=html --cov-report=term-missing --cov-fail-under=80
     volumes:
       - ./backend:/app
     profiles:

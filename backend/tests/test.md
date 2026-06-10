@@ -1,17 +1,27 @@
 Test
 
 Rebuild l’image :
+```bash
 docker compose build --no-cache pdf-to-md-tests
+```
+
 Lancement des test:
+```bash
 docker compose --profile test run --rm pdf-to-md-tests
+```
 
 Build et test en une commande:
+```bash
 docker compose --profile test run --rm --build pdf-to-md-tests
+```
 
 resultats des tests en html en couleur:
+```bash
 docker compose --profile test run --rm pdf-to-md-tests pytest --cov=app --cov-report=html --cov-report=term-missing --cov-fail-under=80
+```
 
 
+```bash
 root:/mnt/c/Users/Stéphane_HP
 /Documents/projet pdf to md/pdf-to-markdown-app$ docker compose --profile test run --rm pdf-to-md-tests
 Container pdf-to-markdown-app-pdf-to-md-tests-run-e31413c653be Creating
@@ -42,5 +52,9 @@ Required test coverage of 80% reached. Total coverage: 92.11%
 ======= 16 passed, 1 warning in 5.71s ========
 root:/mnt/c/Users/Stéphane_HP
 /Documents/projet pdf to md/pdf-to-markdown-app$
+```
 
-
+```bash
+explorer.exe "./backend/htmlcov/index.html"
+```
+--> ne fonctionne pas ici!

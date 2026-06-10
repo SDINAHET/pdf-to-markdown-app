@@ -275,7 +275,6 @@ Benefits:
 * Project documentation
 * Reports
 * Research papers
-* RNCP dossiers
 * User manuals
 
 ---
@@ -328,15 +327,6 @@ Performance depends on:
 
 Full Stack Developer
 
-GitHub:
-https://github.com/SDINAHET
-
-LinkedIn:
-https://www.linkedin.com/in/st%C3%A9phane-dinahet-3b363189/
-
-Portfolio:
-https://sdinahet.github.io/SDINAHET/
-
 ---
 
 ## License
@@ -352,13 +342,17 @@ Backend  : http://localhost:8000/docs
 
 Tests automatisés exécutables localement ou dans Docker avec objectif de couverture minimale de 80 %.
 Pour lancer uniquement les tests :
+```bash
 docker compose --profile test run --rm pdf-to-md-tests
 docker compose --profile test run --rm pdf-to-md-tests pytest --cov=app --cov-report=term-missing --cov-fail-under=80
+```
 
 Pour lancer l’app normalement :
+```bash
 docker compose up --build
+```
 
-
+```
 GET  /                 → test accueil
 GET  /api/health       → test santé API
 POST /api/convert      → conversion PDF
@@ -366,7 +360,120 @@ PDF invalide           → 400 propre
 PDF vide               → 400 propre
 fichier non PDF        → 400 propre
 PDF sans texte         → 422 propre
+```
 
+```bash
 docker compose build --no-cache pdf-to-md-tests
 docker compose --profile test run --rm pdf-to-md-tests
 docker compose --profile test run --rm --build pdf-to-md-tests
+```
+
+## Project Structure
+
+```text
+pdf-to-markdown-app/
+│
+├── docker-compose.yml
+├── README.md
+│
+├── backend/
+│   ├── Dockerfile
+│   ├── app.py
+│   ├── requirements.txt
+│   │
+│   ├── tests/
+│   │   ├── __init__.py
+│   │   └── test_app.py
+│   │
+│   ├── htmlcov/
+│   │   ├── index.html
+│   │   └── ...
+│   │
+│   └── uploads/
+│
+└── frontend/
+    ├── index.html
+    ├── style.css
+    ├── script.js
+    └── favicon.ico
+```
+
+### Backend
+
+The backend is built with FastAPI and exposes REST endpoints used to convert PDF documents into Markdown format.
+
+Responsibilities:
+
+* File upload handling
+* PDF validation
+* PDF to Markdown conversion
+* Error handling
+* API documentation (Swagger/OpenAPI)
+* Test execution and coverage reporting
+
+### Frontend
+
+The frontend provides a lightweight user interface allowing users to:
+
+* Upload PDF documents
+* Preview generated Markdown
+* Download Markdown files
+* Interact with the conversion API
+
+### Automated Tests
+
+The project includes automated tests using Pytest.
+
+Test coverage currently includes:
+
+* API availability
+* Swagger documentation
+* OpenAPI specification
+* Health check endpoint
+* Missing file validation
+* Invalid file type validation
+* Empty PDF handling
+* Corrupted PDF handling
+* Valid PDF conversion
+* CORS verification
+* Internal exception handling
+
+Coverage report:
+
+```text
+Tests executed : 16
+Tests passed   : 16
+Coverage       : 92.11 %
+Target         : 80 %
+Status         : PASSED
+```
+
+Coverage reports are automatically generated inside:
+
+```text
+backend/htmlcov/
+```
+
+and can be viewed through:
+
+```text
+backend/htmlcov/index.html
+```
+
+### Docker Services
+
+```text
+pdf-to-md-api
+├── FastAPI application
+└── Port 8000
+
+pdf-to-md-front
+├── Nginx static frontend
+└── Port 8080
+
+pdf-to-md-tests
+├── Pytest execution
+├── Coverage report generation
+└── Minimum coverage threshold: 80%
+```
+
