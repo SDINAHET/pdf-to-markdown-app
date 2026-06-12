@@ -1,13 +1,39 @@
-[![Tests Python, Coverage and Docker](https://github.com/SDINAHET/pdf-to-markdown-app/actions/workflows/tests.yml/badge.svg)](https://github.com/SDINAHET/pdf-to-markdown-app/actions/workflows/tests.yml)
+<!-- [![Tests Python, Coverage and Docker](https://github.com/SDINAHET/pdf-to-markdown-app/actions/workflows/tests.yml/badge.svg)](https://github.com/SDINAHET/pdf-to-markdown-app/actions/workflows/tests.yml) -->
 
-![Coverage](https://img.shields.io/badge/coverage-80%25%2B-brightgreen)
+<!-- ![Coverage](https://img.shields.io/badge/coverage-80%25%2B-brightgreen) -->
 
 
 <!-- [![Tests Python, Coverage and Docker](https://github.com/SDINAHET/pdf-to-markdown-app/actions/workflows/tests.yml/badge.svg)](https://github.com/SDINAHET/pdf-to-markdown-app/actions/workflows/tests.yml) -->
 
-[![codecov](https://codecov.io/gh/SDINAHET/pdf-to-markdown-app/graph/badge.svg)](https://codecov.io/gh/SDINAHET/pdf-to-markdown-app)
+<!-- [![codecov](https://codecov.io/gh/SDINAHET/pdf-to-markdown-app/graph/badge.svg)](https://codecov.io/gh/SDINAHET/pdf-to-markdown-app) -->
+
 
 # pdf-to-markdown-app
+
+[![Tests Python, Coverage and Docker](https://github.com/SDINAHET/pdf-to-markdown-app/actions/workflows/tests.yml/badge.svg)](https://github.com/SDINAHET/pdf-to-markdown-app/actions/workflows/tests.yml)
+
+![GitHub last commit](https://img.shields.io/github/last-commit/SDINAHET/pdf-to-markdown-app)
+![GitHub repo size](https://img.shields.io/github/repo-size/SDINAHET/pdf-to-markdown-app)
+![GitHub language count](https://img.shields.io/github/languages/count/SDINAHET/pdf-to-markdown-app)
+![GitHub top language](https://img.shields.io/github/languages/top/SDINAHET/pdf-to-markdown-app)
+![GitHub issues](https://img.shields.io/github/issues/SDINAHET/pdf-to-markdown-app)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/SDINAHET/pdf-to-markdown-app)
+![GitHub forks](https://img.shields.io/github/forks/SDINAHET/pdf-to-markdown-app)
+![GitHub stars](https://img.shields.io/github/stars/SDINAHET/pdf-to-markdown-app)
+![GitHub watchers](https://img.shields.io/github/watchers/SDINAHET/pdf-to-markdown-app)
+![GitHub license](https://img.shields.io/github/license/SDINAHET/pdf-to-markdown-app)
+
+![Python](https://img.shields.io/badge/Python-3.12-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
+![Pytest](https://img.shields.io/badge/Pytest-Tested-brightgreen)
+![Docker](https://img.shields.io/badge/Docker-Ready-blue)
+![Docker Compose](https://img.shields.io/badge/Docker_Compose-Ready-blue)
+![Nginx](https://img.shields.io/badge/Nginx-Frontend-green)
+![Coverage](https://img.shields.io/badge/Coverage-80%25%2B-brightgreen)
+![Status](https://img.shields.io/badge/Status-Active-success)
+![Maintenance](https://img.shields.io/badge/Maintained-Yes-success)
+
+
 Application web permettant de convertir des fichiers PDF en Markdown afin de réduire le nombre de tokens utilisés par les IA. L’utilisateur dépose un PDF, le contenu est extrait et converti automatiquement en Markdown, puis affiché et téléchargeable au format .md.
 
 # PDF to Markdown Converter
