@@ -2,6 +2,11 @@
 
 ![Coverage](https://img.shields.io/badge/coverage-80%25%2B-brightgreen)
 
+
+[![Tests Python, Coverage and Docker](https://github.com/SDINAHET/pdf-to-markdown-app/actions/workflows/tests.yml/badge.svg)](https://github.com/SDINAHET/pdf-to-markdown-app/actions/workflows/tests.yml)
+
+[![codecov](https://codecov.io/gh/SDINAHET/pdf-to-markdown-app/graph/badge.svg)](https://codecov.io/gh/SDINAHET/pdf-to-markdown-app)
+
 # pdf-to-markdown-app
 Application web permettant de convertir des fichiers PDF en Markdown afin de réduire le nombre de tokens utilisés par les IA. L’utilisateur dépose un PDF, le contenu est extrait et converti automatiquement en Markdown, puis affiché et téléchargeable au format .md.
 
