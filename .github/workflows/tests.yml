@@ -1,0 +1,81 @@
+name: Tests Python, Coverage and Docker
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test-and-docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install backend dependencies
+        working-directory: backend
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Check Python compilation
+        working-directory: backend
+        run: |
+          python -m py_compile app.py
+          python -m compileall .
+
+      - name: Run tests with coverage
+        working-directory: backend
+        run: |
+          pytest -v \
+            --cov=app \
+            --cov-report=term-missing \
+            --cov-report=xml \
+            --cov-fail-under=80
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: backend/coverage.xml
+
+      - name: Build Docker image
+        run: |
+          docker build -t pdf-to-markdown-api ./backend
+
+      - name: Start Docker Compose
+        run: |
+          docker compose up -d --build
+
+      - name: Wait for API
+        run: |
+          for i in {1..30}; do
+            if curl -f http://localhost:8000/api/health; then
+              echo "API is ready"
+              exit 0
+            fi
+            echo "Waiting for API..."
+            sleep 2
+          done
+          docker compose logs
+          exit 1
+
+      - name: Test API health endpoint in Docker
+        run: |
+          curl -f http://localhost:8000/api/health
+
+      - name: Test frontend container
+        run: |
+          curl -f http://localhost:8080
+
+      - name: Stop Docker Compose
+        if: always()
+        run: |
+          docker compose down
