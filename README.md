@@ -3,7 +3,7 @@
 ![Coverage](https://img.shields.io/badge/coverage-80%25%2B-brightgreen)
 
 
-[![Tests Python, Coverage and Docker](https://github.com/SDINAHET/pdf-to-markdown-app/actions/workflows/tests.yml/badge.svg)](https://github.com/SDINAHET/pdf-to-markdown-app/actions/workflows/tests.yml)
+<!-- [![Tests Python, Coverage and Docker](https://github.com/SDINAHET/pdf-to-markdown-app/actions/workflows/tests.yml/badge.svg)](https://github.com/SDINAHET/pdf-to-markdown-app/actions/workflows/tests.yml) -->
 
 [![codecov](https://codecov.io/gh/SDINAHET/pdf-to-markdown-app/graph/badge.svg)](https://codecov.io/gh/SDINAHET/pdf-to-markdown-app)
 
