@@ -10,7 +10,7 @@ services:
     image: nginx:alpine
     container_name: pdf-to-md-front
     ports:
-      - "8080:80"
+      - "8079:80"
     volumes:
       - ./frontend:/usr/share/nginx/html:ro
     restart: unless-stopped
