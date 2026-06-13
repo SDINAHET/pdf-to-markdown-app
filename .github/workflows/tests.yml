@@ -78,7 +78,7 @@ jobs:
 
       - name: Test frontend container
         run: |
-          curl -f http://localhost:8080
+          curl -f http://localhost:8079
 
       - name: Stop Docker Compose
         if: always()
