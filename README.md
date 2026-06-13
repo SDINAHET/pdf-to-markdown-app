@@ -371,7 +371,7 @@ This project is released under the MIT License.
 Feel free to use, modify and distribute it.
 
 
-Frontend : http://localhost:8080
+Frontend : http://localhost:8079
 Backend  : http://localhost:8000/docs
 
 
