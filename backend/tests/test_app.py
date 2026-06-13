@@ -203,7 +203,7 @@ def test_cors_headers():
     response = client.options(
         "/api/convert",
         headers={
-            "Origin": "http://localhost:8079",
+            "Origin": "http://localhost:8080",
             "Access-Control-Request-Method": "POST"
         }
     )
